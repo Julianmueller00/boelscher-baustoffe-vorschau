@@ -137,6 +137,18 @@ document.addEventListener("includes:loaded", () => {
   }
 
 
+  // ===== Rechner -> Kontakt: Nachricht vorbefüllen =====
+  // Wird der Kontakt per "Menge anfragen" aus dem Baustoff-Rechner geöffnet,
+  // steht das Ergebnis als ?anfrage=... in der URL und füllt die Nachricht vor.
+  const anfrage = new URLSearchParams(window.location.search).get("anfrage");
+  const msgField = document.getElementById("message");
+  if (anfrage && msgField && !msgField.value) {
+    msgField.value =
+      "Anfrage über den Baustoff-Rechner:\n" + anfrage +
+      "\n\nBitte um ein unverbindliches Angebot. Vielen Dank!";
+  }
+
+
   // ===== Google Maps: Zwei-Klick-Consent =====
   // Die Karte wird erst nach aktivem Klick geladen – vorher keine Verbindung zu Google.
   document.querySelectorAll(".map-consent").forEach(box => {

@@ -923,6 +923,71 @@ header{
   .usp-strip{grid-template-columns:1fr}
 }
 
+/* ========== BAUSTOFF-RECHNER ========= */
+.calc{
+  max-width:860px;
+}
+.calc-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:22px;
+}
+.calc-tab{
+  padding:11px 18px;
+  border:1px solid var(--border);
+  background:var(--white);
+  color:var(--blue-dark);
+  font:inherit;
+  font-weight:800;
+  font-size:15px;
+  border-radius:var(--radius-pill);
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+.calc-tab:hover{border-color:var(--blue)}
+.calc-tab.is-active{
+  background:var(--blue-dark);
+  border-color:var(--blue-dark);
+  color:#fff;
+}
+.calc-panel{
+  background:var(--white);
+  border:1px solid var(--border-light);
+  border-top:4px solid var(--red);
+  border-radius:var(--radius-md);
+  padding:26px;
+  box-shadow:var(--shadow-sm);
+}
+.calc-fields{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.calc-result{
+  display:block;
+  margin-top:22px;
+  padding:16px 18px;
+  background:var(--surface-alt);
+  border:1px solid var(--border-light);
+  border-left:4px solid var(--blue);
+  border-radius:var(--radius-sm);
+  font-size:17px;
+  line-height:1.6;
+}
+.calc-result strong{color:var(--blue-dark)}
+.calc-anfrage{
+  margin-top:18px;
+}
+.calc-note{
+  max-width:860px;
+  margin-top:18px;
+}
+@media(max-width:620px){
+  .calc-fields{grid-template-columns:1fr}
+  .calc-tab{flex:1 1 auto; text-align:center}
+}
+
 /* ========== RESPONSIVE ========= */
 @media(max-width:1100px){
   .slide h1,
